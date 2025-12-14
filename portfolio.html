@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pika Portfolio</title>
+<style>
+/* VARIABLES THEME */
+:root {
+  --pink: #ffb6d9;
+  --darkpink: #ff4fa9;
+  --mint: #aaf0d1;
+  --white: #ffffff;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--pink);
+}
+
+/* MARQUEE */
+.marquee {
+  background: var(--darkpink);
+  color: white;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* NAVIGATION */
+nav {
+  position: sticky;
+  top: 0px;
+  width: 98%;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 9999;
+}
+
+.nav-left { display: flex; align-items: center; gap: 15px; }
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--darkpink);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+/* BELOW NAV */
+.nav-below {
+  margin-top: 110px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.spotify-player iframe {
+  border-radius: 12px;
+  width: 300px;
+  height: 152px;
+}
+
+#clock {
+  background: var(--mint);
+  padding: 8px 14px;
+  border-radius: 12px;
+  color: var(--white);
+  font-weight: bold;
+  font-size: 14px;
+  width: 90px;
+  height: 15px;
+  text-align: center;
+}
+
+/* HOME BUTTON */
+.home-btn {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  background: var(--mint);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 10000;
+}
+.home-btn:hover {
+  background: var(--mint);
+  color: var(--white);
+  transition: 0.3s;
+}
+
+/* SECTION BOX */
+section {
+  width: 85%;
+  background: var(--white);
+  margin: 20px auto 20px;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+section:target { scroll-margin-top: 160px; }
+
+h2 { color: var(--darkpink); margin-top: 0; }
+
+/* ABOUT */
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profile-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 6px solid var(--mint);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* SKILLS BAR */
+.skill { margin-bottom: 20px; }
+.skill p { margin: 0 0 5px 0; font-weight: bold; color: var(--darkpink); }
+
+.skill-bar {
+  width: 100%;
+  background: var(--pink);
+  border-radius: 12px;
+  overflow: hidden;
+  height: 25px;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--mint), var(--darkpink));
+  border-radius: 12px 0 0 12px;
+  text-align: right;
+  padding-right: 10px;
+  color: var(--white);
+  font-weight: bold;
+  line-height: 25px;
+}
+
+/* GALLERY GRID */
+.gallery-grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.gallery-item {
+  flex: 1 1 calc(25% - 20px);
+  text-align: center;
+}
+
+.gallery-item img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--mint);
+  margin-bottom: 10px;
+}
+
+.gallery-item p { font-size: 14px; color: var(--darkpink); }
+
+</style>
+</head>
+<body>
+<!-- MARQUEE -->
+<marquee class="marquee" behavior="scroll" direction="left"> Hi! Welcome to Pika’s Portfolio 💗✨ </marquee>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-left">
+    <div class="logo"><b>Pika's Portfolio</b></div>
+  </div>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- SPOTIFY + CLOCK -->
+<div class="nav-below">
+  <div class="spotify-player">
+    <iframe src="https://open.spotify.com/embed/track/3A02hWQ2ebOFDWSbAMNnpw?utm_source=generator" frameborder="0" allow="autoplay; clipboard-write; encrypted-media;">
+    </iframe>
+  </div>
+  <div id="clock"></div>
+
+  <!-- HOME BUTTON -->
+  <a href="index.html" class="home-btn">Home</a>
+</div>
+
+  <div style="margin: 30px 0; text-align:center;">
+    <img src="welcome.gif" alt="Welcome GIF" style="width:300px; height:200px;">
+  </div>
+</section>
+
+<!-- WELCOME SECTION -->
+<section class="welcome-section" id="welcome" style="text-align:center;">
+  <h1 style="font-size: 36px; margin-bottom: 10px; font-weight: bold;"> Welcome to My Portfolio! 💗 </h1>
+  <p style="font-size: 18px; color: #555;"> Hi! I'm Pika — thank you for visiting my page Feel free to explore my works, experiences, and more. </p>
+<audio controls>
+     <source src="audio.mp3" type="audio/mpeg">
+   </audio>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <div class="about-container">
+    <div class="profile-frame">
+      <img src="profile.jpeg" alt="Pika Photo">
+    </div>
+    <div class="about-text">
+      <h3>Hi! My name is <b> Afiqah </b> 💗</h3>
+      <p>
+        I am a Diploma student in <i>Information Management</i>. I love <u>learning</u> new things 💗 
+        I am studying at <abbr title="Universiti Teknologi MARA">UiTM</abbr>. I am currently in my 5<sup>th</sup> semester. 
+        I enjoy simple and meaningful moments. I love cute things, cats, and exploring new places. 
+        People describe me as a caring, kind, and friendly person. <br><br>
+        Now, I am slowly improving myself to become better.
+      </p>
+
+      <h4>Things I Enjoy 💖</h4>
+      <ul class="custom-marker">
+        <li>Cuddling with my cats 🐱</li>
+        <li>Trying out new coffee shops ☕</li>
+        <li>Exploring creative projects 🎨</li>
+        <li>Learning new tech skills 💻</li>
+      </ul>
+
+      <h4>My Personal Goals 🌟</h4>
+      <ul class="custom-marker">
+        <li>Improve my coding skills </li>
+        <li>Become more confident in public speaking</li>
+        <li>Travel to new countries and experience cultures</li>
+        <li>Maintain a healthy and balanced lifestyle</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Custom marker for About Me lists */
+.custom-marker {
+  list-style: none;
+  padding-left: 0;
+}
+.custom-marker li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 8px;
+  color: #d96ca3;
+  font-weight: bold;
+}
+.custom-marker li::before {
+  content: "💗"; /* you can change emoji or symbol */
+  position: absolute;
+  left: 0;
+}
+</style>
+
+<!-- RESUME -->
+<section id="resume" style="text-align:center;">
+<h2>My Resume 📄</h2>
+<p style="font-size: 18px; color: #555; margin-bottom: 25px;"> Click the button below to view or download my resume. </p>
+<a href="https://drive.google.com/file/d/1yl8npkznj-mmgqN-rU2EwP_YVJ6ntyBM/view?usp=sharing" target="_blank" style=" display: inline-block; padding: 12px 25px; background-color: #f3b3d3; color: white; font-size: 18px; border-radius: 10px; text-decoration: none; font-weight: bold; "> View My Resume </a>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+<h2>Skills</h2>
+<div class="skill"><p>Communication</p><div class="skill-bar"><div class="skill-fill" style="width:80%;">80%</div></div></div>
+<div class="skill"><p>Microsoft Word</p><div class="skill-bar"><div class="skill-fill" style="width:80%;">80%</div></div></div>
+<div class="skill"><p>Video Editing</p><div class="skill-bar"><div class="skill-fill" style="width:75%;">75%</div></div></div>
+<div class="skill"><p>Teamwork</p><div class="skill-bar"><div class="skill-fill" style="width:80%;">80%</div></div></div>
+<h3>Other Skills</h3>
+<ul style="list-style-type: circle;">
+<li>C++/html coding</li>
+<li>Time Management</li>
+</ul>
+<ol>
+<li>Planning</li>
+<li>Design</li>
+</ol>
+<h3>Technical Summary</h3>
+<pre> Software : Microsoft Word, Excel 
+Editing : CapCut, Canva 
+Coding : HTML & CSS (Basic) 
+Strengths : Teamwork, Time Management 
+</pre>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+<h2 style="text-align:center; color:#d96ca3;">My Experience 💼</h2>
+<p style="text-align:center; color:#555;">This are my experience.</p>
+<div style="overflow-x:auto;">
+<table class="experience-table">
+<thead>
+<tr>
+<th>Year</th>
+<th>Position</th>
+<th>Club/Organization</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2024</td>
+<td>Entrepreneurship Executive</td>
+<td>Sekretariat Rakan Muda (SRM)</td>
+<td>Handled club entrepreneurship programs and activities.</td>
+</tr>
+<tr>
+<td>2024</td>
+<td>Academic Executive</td>
+<td>Information Management Society(IMS)</td>
+<td>Handled faculty academic events and activities.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>Intern</td>
+<td>Hospital Cyberjaya</td>
+<td>Work as records manager, assisted in managing & organizing records.</td>
+</tr>
+<tr>
+<td>2025</td>
+<td>Treasurer</td>
+<td>Sulam Project</td>
+<td>Managed financial records and assisted in budgeting for activities.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<style>
+.experience-table {
+border-collapse: collapse;
+width: 100%;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #fff0f5;
+border-radius: 10px;
+overflow: hidden;
+}
+.experience-table th, .experience-table td { border: 1px solid #f2cce2; padding: 12px 15px; text-align: left; }
+.experience-table th { background-color: #f2cce2; color: #333; font-weight: 600; }
+.experience-table tr:nth-child(even) { background-color: #ffe6f0; }
+.experience-table tr:hover { background-color: #f9cce0; transition: 0.3s; }
+@media screen and (max-width: 600px) { .experience-table th, .experience-table td { padding: 10px 8px; } }
+</style>
+
+<!-- EDUCATION -->
+<section id="education">
+<h2>Education 🎓</h2>
+<p style="color:#555;"> Below is my education background. </p>
+<iframe src="edu.html" width="100%" height="600" style="border:none; border-radius:15px;"> </iframe>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+<h2>Gallery</h2>
+<p>Here are some of my photos 💗</p>
+<h3>Club Activities & Visits</h3>
+<div class="gallery-grid">
+<div class="gallery-item"><a href="#foodrun"> <img src="foodrun.jpeg" alt="5 KM Food Run"><p>5 KM Food Run</p></a></div>
+<div class="gallery-item"><a href="#agm"> <img src="agm.jpeg" alt="SRM Anual Grand Meeting"><p>SRM Anual Grand Meeting</p></a></div>
+<div class="gallery-item"><a href="#ims"> <img src="ims.jpeg" alt="IMS Maxis Trip"><p>IMS Maxis Trip</p></a></div>
+<div class="gallery-item"><a href="#colourrun"> <img src="colourrun.jpeg" alt="Faculty Colour Run"><p>Faculty Colour Run</p></a></div>
+</div>
+<h3>Memories</h3>
+<div class="gallery-grid">
+<div class="gallery-item"><a href="#m1"> <img src="m1.jpeg" alt="5KM Run"><p>5KM Run</p></a></div>
+<div class="gallery-item"><a href="#m2"> <img src="m2.jpeg" alt="JB Trip"><p>JB Trip</p></a></div>
+<div class="gallery-item"><a href="#m3"> <img src="m3.jpeg" alt="KL Trip"><p>KL Trip</p></a></div>
+<div class="gallery-item"><a href="#m4"> <img src="m4.jpeg" alt="Iftar with HS Friends"><p>Iftar HS Friends</p></a></div>
+</div>
+<h3>Things I Love</h3>
+<div class="gallery-grid">
+<div class="gallery-item"><a href="#coffee"> <img src="coffee.jpeg" alt="Coffee"><p>Coffee</p></a></div>
+<div class="gallery-item"><a href="#makeup"> <img src="makeup.jpeg" alt="Makeup"><p>Makeup</p></a></div>
+<div class="gallery-item"><a href="#cats"> <img src="cats.jpeg" alt="Cats"><p>Cats</p></a></div>
+<div class="gallery-item"><a href="#matcha"> <img src="matcha.jpeg" alt="Matcha"><p>Matcha</p></a></div>
+</div>
+<<!-- VIDEO -->
+<div id="video-background" style="text-align:center; margin: 30px 0;">
+  <h2 style="color:#d96ca3;">My Videos 🎬</h2>
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:20px;">
+    <video width="300" height="170" autoplay muted loop style="border-radius:12px;">
+      <source src="video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video width="300" height="170" autoplay muted loop style="border-radius:12px;">
+      <source src="video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <video width="300" height="170" autoplay muted loop style="border-radius:12px;">
+      <source src="video3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+  </div>
+</section>
+
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<div class="contact-icons" style="display:flex; gap:30px; justify-content:center;">
+<div><a href="https://www.tiktok.com/@pkaeun?_r=1&_t=ZS-92BIXoWkP8k"><img src="ttlogo.jpg" width="50"></a><p>@pkaeun</p></div>
+<div><a href="https://wa.me/60182444436"><img src="wslogo.png" width="50"></a><p>+60182444436</p></div>
+<div><a href="https://www.instagram.com/pkaeun?igsh=YmN6eTEzYjhmZXFs"><img src="iglogo.webp" width="50"></a><p>@pkaeun</p></div>
+</div>
+</section>
+
+<script>
+function updateClock() {
+  let clock = document.getElementById("clock");
+  let now = new Date();
+  clock.textContent = now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
