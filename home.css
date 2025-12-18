@@ -1,0 +1,26 @@
+
+
+.home-box:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  transition: 0.3s;
+}
+
+
+.btn {
+  cursor: pointer;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px rgba(255,79,169,0.6);
+}
+
+.floating-gif {
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,0.15));
+}
+
+
+@media (max-width: 600px) {
+  .home-box {
+    padding: 30px;
+  }
+}
